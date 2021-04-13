@@ -132,7 +132,7 @@ async def play(_, message: Message):
         )
 
     else:
-        await lel.edit("🔎 **Finding**")
+        await lel.edit("🧐 **Finding**")
         sender_id = message.from_user.id
         user_id = message.from_user.id
         sender_name = message.from_user.first_name
@@ -159,7 +159,7 @@ async def play(_, message: Message):
             views = results[0]["views"]
 
         except Exception as e:
-            await lel.edit("Song not found.Try another song or maybe spell it properly.")
+            await lel.edit("kadalle illiyam.song name ah olunga poduda 🤨 en dubukku.")
             print(str(e))
             return
 
@@ -181,7 +181,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ Your requested song **queued** at position {position}!",
+        caption=f"😁 thampi token pottachu appdi poi ukkaru😆 **queued** token number😝 {position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -190,7 +190,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="▶️ **Playing** here the song requested by {} via DaisyXmusic 😜".format(
+        caption="▶️ **Playing** here the song requested by {} via aathiraprobot 😜".format(
         message.from_user.mention()
         ),
     )
